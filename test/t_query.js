@@ -68,17 +68,17 @@ module.exports = testCase({
     var q1 = new Query({querystring:'select f1,f2 from hoge_table'});
     test.equals(q1.queryid, Query.generateQueryId('select f1,f2 from hoge_table'));
     test.equals(q1.querystring, 'select f1,f2 from hoge_table');
-    test.deepEqual(q1.results, []);
+    test.deepEqual(q1.results, undefined);
 
     var q2 = new Query({querystring:'select f1,f2 from hoge_table where service="news"'});
     test.equals(q2.queryid, Query.generateQueryId('select f1,f2 from hoge_table where service="news"'));
     test.equals(q2.querystring, 'select f1,f2 from hoge_table where service="news"');
-    test.deepEqual(q2.results, []);
+    test.deepEqual(q2.results, undefined);
 
     var q3 = new Query({querystring:'select f1,f2 from hoge_table where service="news"', seed:'201108'});
     test.equals(q3.queryid, Query.generateQueryId('select f1,f2 from hoge_table where service="news"', '201108'));
     test.equals(q3.querystring, 'select f1,f2 from hoge_table where service="news"');
-    test.deepEqual(q3.results, []);
+    test.deepEqual(q3.results, undefined);
 
     test.done();
   },
